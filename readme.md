@@ -30,9 +30,9 @@ The main entry point into the program is the python `startTyping()` function.  T
 
 ```vim
 command! TortoiseTyping py startTyping(
-  \ filepath="xmasCarol.txt",
-  \ randomize=True,
-  \ wordCount=150)
+  \ filepath  = "xmasCarol.txt",
+  \ randomize = True,
+  \ wordCount = 150)
 ```
 
 Feel free to use combinations of commands, mappings, and functions to customize how the program starts.
