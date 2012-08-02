@@ -18,7 +18,7 @@ Compatible with Vim 7.2 and above.  Requires the Vim was compiled with the pytho
 
 # Advanced Options and Features
 
-The main screen has a progress bar showing percent completion through text.  (Use the tab key to toggle graphical/fraction representation.)  Below that are words-per-minute and accuracy statistics.
+The main screen has a progress bar showing percent completion through text.  Use the tab key to toggle graphical/fraction representation.  Below that are words-per-minute and accuracy statistics.
 
 Main program options:
 
@@ -37,18 +37,22 @@ command! TortoiseTyping py startTyping(
 
 Feel free to use combinations of commands, mappings, and functions to customize how the program starts.
 
-# Licensing
-
-This work is distributed as is, and I make no guarantee that it won't trash your system.  As always when trying new things, it makes good sense to save what you're working on first.
-
-Feel free to modify and distribute this script in any way, so long as you credit me and send me an email if you do anything cool with it.
-
 # Installation
 
-If using (Vundle)[https://github.com/gmarik/vundle/], add
+If using [Vundle](https://github.com/gmarik/vundle/), add
 
     Bundle 'thanthese/Tortoise-Typing'
 
 to your vundle file.
 
 Otherwise, just make sure that `tortoiseTyping.vim` ends up in your plugins folder.
+
+# Development
+
+There are some known cross-platform issues.  If you have a fix, send me a pull request!
+
+# Licensing
+
+This work is distributed as is, and I make no guarantee that it won't trash your system.  As always when trying new things, it makes good sense to save what you're working on first.
+
+Feel free to modify and distribute this script in any way, so long as you credit me and send me an email if you do anything cool with it.
