@@ -28,12 +28,12 @@ Main program options:
 
 The main entry point into the program is the python `startTyping()` function.  The `:TortoiseTyping` command calls it like this:
 
-```vimscript
-command! TortoiseTyping py startTyping(
-  \ filepath="xmasCarol.txt",
-  \ randomize=True,
-  \ wordCount=150)
-```
+    ```vimscript
+    command! TortoiseTyping py startTyping(
+      \ filepath="xmasCarol.txt",
+      \ randomize=True,
+      \ wordCount=150)
+    ```
 
 Feel free to use combinations of commands, mappings, and functions to customize how the program starts.
 
@@ -45,7 +45,10 @@ If using [Vundle](https://github.com/gmarik/vundle/), add
 
 to your vundle file.
 
-Otherwise, just make sure that `tortoiseTyping.vim` ends up in your plugins folder.
+Otherwise, just make sure that
+
+- `tortoiseTyping.vim` is in `plugins`
+- `xmasCarol.txt` is in `/.vim/bundle/Tortoise-Typing/plugin`
 
 # Development
 
