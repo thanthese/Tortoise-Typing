@@ -43,7 +43,7 @@ If using [Vundle](https://github.com/gmarik/vundle/), add
 
     Bundle 'thanthese/Tortoise-Typing'
 
-to your vundle file.
+to your vundle file and run `:BundleInstall`.
 
 Otherwise, just make sure that
 
