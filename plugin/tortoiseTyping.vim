@@ -206,7 +206,7 @@ def startTyping(filepath="", randomize=False, wordCount=0):
   vim.command("setlocal buftype=nofile")
   vim.command("setlocal bufhidden=hide")
   vim.command("setlocal noswapfile")
-  vim.command("norm yy%spgg" % (WIN_HEIGHT - 1))  # create blank lines
+  vim.command("norm! yy%spgg" % (WIN_HEIGHT - 1))  # create blank lines
 
   # attempt to capture keys (and suppress) for progress bar toggle
   vim.command("inoremap <buffer> <expr> <Tab> ToggleProgressBar()")
