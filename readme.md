@@ -28,7 +28,7 @@ Main program options:
 
 The main entry point into the program is the python `startTyping()` function.  The `:TortoiseTyping` command calls it like this:
 
-    ```vimscript
+    ```vim
     command! TortoiseTyping py startTyping(
       \ filepath="xmasCarol.txt",
       \ randomize=True,
