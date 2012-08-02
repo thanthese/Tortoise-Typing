@@ -190,7 +190,7 @@ def startTyping(filepath="", randomize=False, wordCount=0):
 
   # move to plugin directory
   vim.command("silent cd $HOME")
-  vim.command("silent cd .vim/plugin/tortoiseTyping/")
+  vim.command("silent cd .vim/bundle/Tortoise-Typing/plugin")
 
   # set globals
   if not filepath:
