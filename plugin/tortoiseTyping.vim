@@ -190,7 +190,11 @@ def startTyping(filepath="", randomize=False, wordCount=0):
 
   # move to plugin directory
   vim.command("silent cd $HOME")
-  vim.command("if !(has('win16') || has('win32') || has('win64')) | silent cd vimfiles/bundle/Tortoise-Typing/plugin | else | silent cd .vim/bundle/Tortoise-Typing/plugin | endif")
+  isWindows = vim.eval("has('win16') || has('win32') || has('win64')") == "1"
+  if isWindows:
+    vim.command("silent cd vimfiles/bundle/Tortoise-Typing/plugin")
+  else:
+    vim.command("silent cd .vim/bundle/Tortoise-Typing/plugin")
 
   # set globals
   if not filepath:
