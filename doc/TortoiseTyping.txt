@@ -1,3 +1,5 @@
+*TortoiseTyping*  To touch-typists who would like sharpen their skills
+
 # Description
 
 TortoiseTyping is a minimal typing tutor aimed at touch-typists who would like to spend a few minutes a week sharpening their skills.
@@ -59,3 +61,6 @@ There are some known cross-platform issues.  If you have a fix, send me a pull r
 This work is distributed as is, and I make no guarantee that it won't trash your system.  As always when trying new things, it makes good sense to save what you're working on first.
 
 Feel free to modify and distribute this script in any way, so long as you credit me and send me an email if you do anything cool with it.
+
+
+vim: tw=78:ts=8:ft=help:fdm=marker
