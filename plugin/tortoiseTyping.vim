@@ -5,11 +5,10 @@
 "
 " Additional information in the included README.txt
 
-
 " common start commands
 command! TutorialTyping py startTyping()
 command! TortoiseTyping py startTyping(
-  \ filepath="xmasCarol.txt",
+  \ filepath=getPath("xmasCarol.txt"),
   \ randomize=True,
   \ wordCount=150)
 command! -nargs=1 FileTyping py startTyping(
@@ -183,18 +182,21 @@ class WPM:
 # IO
 # ==
 
+def getPath(name):
+  """Given a filename, returns a full path.  Ex:
+
+    xmasCarol.txt ->
+    /Users/johnsmith/.vim/bundle/Tortoise-Typing/plugin/xmasCarol.txt
+
+  Searches within the vim runtime path.  Takes the first matching path.
+  Explodes ungracefully if the file doesn't exist."""
+  cmd = "split(globpath(&runtimepath, \"**/\" . \"" + name + "\"), \"\n\")[0]"
+  return vim.eval(cmd)
+
 def startTyping(filepath="", randomize=False, wordCount=0):
   """Initialize program.  Option descriptions at top of
   file."""
   global source, accuracy, wpm, showBar
-
-  # move to plugin directory
-  vim.command("silent cd $HOME")
-  isWindows = vim.eval("has('win16') || has('win32') || has('win64')") == "1"
-  if isWindows:
-    vim.command("silent cd vimfiles/bundle/Tortoise-Typing/plugin")
-  else:
-    vim.command("silent cd .vim/bundle/Tortoise-Typing/plugin")
 
   # set globals
   if not filepath:
