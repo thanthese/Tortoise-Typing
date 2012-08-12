@@ -16,6 +16,17 @@ command! -nargs=1 FileTyping py startTyping(
   \ randomize=True,
   \ wordCount=150)
 
+" Given a filename, returns a full path.  Ex:
+"
+"   xmasCarol.txt ->
+"   /Users/johnsmith/.vim/bundle/Tortoise-Typing/plugin/xmasCarol.txt
+"
+" Searches within the vim runtime path.  Takes the first matching path.
+" Explodes ungracefully if the file doesn't exist.
+function! GetPath(name)
+  return split(globpath(&runtimepath, "**/" . a:name), "\n")[0]
+endfunction
+
 python << EOF
 import vim
 import time
@@ -183,15 +194,7 @@ class WPM:
 # ==
 
 def getPath(name):
-  """Given a filename, returns a full path.  Ex:
-
-    xmasCarol.txt ->
-    /Users/johnsmith/.vim/bundle/Tortoise-Typing/plugin/xmasCarol.txt
-
-  Searches within the vim runtime path.  Takes the first matching path.
-  Explodes ungracefully if the file doesn't exist."""
-  cmd = "split(globpath(&runtimepath, \"**/\" . \"" + name + "\"), \"\n\")[0]"
-  return vim.eval(cmd)
+  return vim.eval("GetPath(\"" + name + "\")")
 
 def startTyping(filepath="", randomize=False, wordCount=0):
   """Initialize program.  Option descriptions at top of
