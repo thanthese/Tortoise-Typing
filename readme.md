@@ -52,7 +52,7 @@ Otherwise, just make sure that
 
 # Development
 
-If you'd like to get involved in the project, there are some open bugs and enhancments. Send me a pull request!
+If you'd like to get involved in the project, there are some open bugs and enhancements. Send me a pull request!
 
 # Licensing
 
