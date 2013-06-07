@@ -52,7 +52,7 @@ Otherwise, just make sure that
 
 # Development
 
-There are some known cross-platform issues.  If you have a fix, send me a pull request!
+If you'd like to get involved in the project, there are some open bugs and enhancments. Send me a pull request!
 
 # Licensing
 
