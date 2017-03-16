@@ -8,17 +8,26 @@
 let s:keepcpo = &cpo
 set cpo&vim
 
+if has('python')
+    command! -nargs=1 Python python <args>
+elseif has('python3')
+    command! -nargs=1 Python python3 <args>
+else
+    echo "Error: Requires Vim compiled with +python or +python3"
+    finish
+endif
+
 func! tortoiseTyping#TutorialTyping()
-  py startTyping()
+  Python startTyping()
 endfunc
 func! tortoiseTyping#TortoiseTyping()
-  py startTyping(
+  Python startTyping(
         \ filepath=getPath("xmasCarol.txt"),
         \ randomize=True,
         \ wordCount=150)
 endfunc
 func! tortoiseTyping#FileTyping(filepath)
-  exe 'py startTyping('
+  exe 'Python startTyping('
         \ . 'filepath="' . a:filepath . '",'
         \ . 'randomize=True,'
         \ . 'wordCount=150)'
@@ -35,7 +44,7 @@ function! GetPath(name)
   return split(globpath(&runtimepath, "**/" . a:name), "\n")[0]
 endfunction
 
-python << EOF
+Python << EOF
 import vim
 import time
 import re
@@ -229,8 +238,8 @@ def startTyping(filepath="", randomize=False, wordCount=0):
   vim.command("inoremap <buffer> <expr> <Tab> ToggleProgressBar()")
 
   # setup user events
-  vim.command("au! CursorMovedI %s python keypress()" % TITLE)
-  vim.command("au! InsertLeave %s python endTyping()" % TITLE)
+  vim.command("au! CursorMovedI %s Python keypress()" % TITLE)
+  vim.command("au! InsertLeave %s Python endTyping()" % TITLE)
 
   # draw initial screen
   sourceSect = source.next()
@@ -327,15 +336,16 @@ def pPercentDone(percent):
   unfill = " " * (innerBarWidth - fillLen)
   return "[" + fill + unfill + "]"
 
-def pFractionDone((word, total)):
+def pFractionDone(fractiontuple):
   """Pretty print fraction."""
+  word, total = fractiontuple
   return "tot: %s / %s words" % (word, total)
 
 EOF
 
 " Toggle the progress bar between percentage to fraction.
 function! ToggleProgressBar()
-python << EOF
+Python << EOF
 global showBar
 showBar = not showBar
 EOF
