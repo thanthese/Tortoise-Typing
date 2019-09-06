@@ -10,6 +10,7 @@ set cpo&vim
 command! TutorialTyping call tortoiseTyping#TutorialTyping()
 command! TortoiseTyping call tortoiseTyping#TortoiseTyping()
 command! -nargs=1 FileTyping call tortoiseTyping#FileTyping("<args>")
+command! -nargs=* RandomTyping call tortoiseTyping#RandomTyping(<f-args>)
 
 let &cpo= s:keepcpo
 unlet s:keepcpo
