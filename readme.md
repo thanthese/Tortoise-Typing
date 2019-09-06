@@ -16,6 +16,20 @@ Compatible with Vim 7.2 and above.  Requires the Vim was compiled with the pytho
 
 `:FileTyping <filepath>` starts like `:TortoiseTyping`, but with the file `<filepath>` of your choice.
 
+`:RandomTyping <wordCount> <language>` starts like `:TortoiseTyping`, but with the file `<filepath>` of your choice.
+eg. `:RandomTyping 150 english1000`
+
+# Random Typing Languages
+
+- english
+- italian
+- german
+- spanish
+- chinese
+- korean
+- english1000
+- polish
+
 # Advanced Options and Features
 
 The main screen has a progress bar showing percent completion through text.  Use the tab key to toggle graphical/fraction representation.  Below that are words-per-minute and accuracy statistics.
@@ -41,7 +55,7 @@ Feel free to use combinations of commands, mappings, and functions to customize 
 
 If using [Vundle](https://github.com/gmarik/vundle/), add
 
-    Bundle 'thanthese/Tortoise-Typing'
+    Bundle 'devinceble/Tortoise-Typing'
 
 to your vundle file and run `:BundleInstall`.
 
