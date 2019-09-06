@@ -8,6 +8,8 @@ Compatible with Vim 7.2 and above.  Requires the Vim was compiled with the pytho
 
 # Quick Start
 
+Note: RandomTyping needs nodejs installed on your system.
+
 `<esc>` ends the program.
 
 `:TutorialTyping` starts the two-minute tutorial.
