@@ -39,13 +39,20 @@ func! tortoiseTyping#FileTyping(filepath)
 endfunc
 
 func! tortoiseTyping#RandomTyping(wordCount,language)
-  call system('node ' . GetPath('random.js') . ' ' . a:wordCount . ' ' . a:language)
+  call system('node ' . GetPath('random.js') . ' ' . a:wordCount . ' ' . a:language . ' none')
   exe 'Python startTyping('
         \ . 'filepath="' . '/tmp/typings.random' . '",'
         \ . 'randomize=True,'
         \ . 'wordCount=' . a:wordCount . ')'
 endfunc
 
+func! tortoiseTyping#PunctuationTyping(wordCount,language)
+  call system('node ' . GetPath('random.js') . ' ' . a:wordCount . ' ' . a:language . ' punc')
+  exe 'Python startTyping('
+        \ . 'filepath="' . '/tmp/typings.random' . '",'
+        \ . 'randomize=True,'
+        \ . 'wordCount=' . a:wordCount . ')'
+endfunc
 " Given a filename, returns a full path.  Ex:
 "
 "
@@ -119,7 +126,7 @@ class SourceFactory:
       sentences = [s.strip() for s in sentences]
       sentences = [s for s in sentences if s]
       random.shuffle(sentences)
-      text = ".  ".join(sentences) + "."
+      text = ". ".join(sentences) + "."
 
     # truncate text based on word count
     if wordCount > 0:

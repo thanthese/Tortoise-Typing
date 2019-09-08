@@ -18,10 +18,13 @@ Note: RandomTyping needs nodejs installed on your system.
 
 `:FileTyping <filepath>` starts like `:TortoiseTyping`, but with the file `<filepath>` of your choice.
 
-`:RandomTyping <wordCount> <language>` starts like `:TortoiseTyping`, but with the file `<filepath>` of your choice.
+`:RandomTyping <wordCount> <language>` starts like `:TortoiseTyping`, but with Random Words from typings.gg.
 eg. `:RandomTyping 150 english1000`
 
-# Random Typing Languages
+`:PunctuationTyping <wordCount> <language>` starts like `:RandomTyping`, but with Uppercase and Punctuations.
+eg. `:RandomTyping 150 english1000`
+
+# Random and Punctuation Typing Languages
 
 - english
 - italian
