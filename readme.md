@@ -8,7 +8,7 @@ Compatible with Vim 7.2 and above.  Requires the Vim was compiled with the pytho
 
 # Quick Start
 
-Note: RandomTyping needs nodejs installed on your system.
+Note: RandomTyping and PunctuationTyping needs *nodejs* installed on your system. https://nodejs.org/en/
 
 `<esc>` ends the program.
 
