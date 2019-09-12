@@ -22,7 +22,7 @@ Note: RandomTyping and PunctuationTyping needs *nodejs* installed on your system
 eg. `:RandomTyping 150 english1000`
 
 `:PunctuationTyping <wordCount> <language>` starts like `:RandomTyping`, but with Uppercase and Punctuations.
-eg. `:RandomTyping 150 english1000`
+eg. `:PunctuationTyping 150 english1000`
 
 # Random and Punctuation Typing Languages
 
