@@ -8,6 +8,8 @@ Compatible with Vim 7.2 and above.  Requires the Vim was compiled with the pytho
 
 # Quick Start
 
+Note: RandomTyping and PunctuationTyping needs *nodejs* installed on your system. https://nodejs.org/en/
+
 `<esc>` ends the program.
 
 `:TutorialTyping` starts the two-minute tutorial.
@@ -15,6 +17,23 @@ Compatible with Vim 7.2 and above.  Requires the Vim was compiled with the pytho
 `:TortoiseTyping` starts the program with default settings: "A Christmas Carol" text, shuffled sentence order, and 150 word session.
 
 `:FileTyping <filepath>` starts like `:TortoiseTyping`, but with the file `<filepath>` of your choice.
+
+`:RandomTyping <wordCount> <language>` starts like `:TortoiseTyping`, but with Random Words from typings.gg.
+eg. `:RandomTyping 150 english1000`
+
+`:PunctuationTyping <wordCount> <language>` starts like `:RandomTyping`, but with Uppercase and Punctuations.
+eg. `:PunctuationTyping 150 english1000`
+
+# Random and Punctuation Typing Languages
+
+- english
+- italian
+- german
+- spanish
+- chinese
+- korean
+- english1000
+- polish
 
 # Advanced Options and Features
 
@@ -41,7 +60,7 @@ Feel free to use combinations of commands, mappings, and functions to customize 
 
 If using [Vundle](https://github.com/gmarik/vundle/), add
 
-    Bundle 'thanthese/Tortoise-Typing'
+    Bundle 'devinceble/Tortoise-Typing'
 
 to your vundle file and run `:BundleInstall`.
 

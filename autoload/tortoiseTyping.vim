@@ -5,6 +5,11 @@
 "
 " Additional information in the included README.txt
 
+" Author      : Leivince John Marte
+" Date        : September 2019
+" Version     : 1.0
+" Description : Added Random Words and Languages
+"
 let s:keepcpo = &cpo
 set cpo&vim
 
@@ -33,7 +38,23 @@ func! tortoiseTyping#FileTyping(filepath)
         \ . 'wordCount=150)'
 endfunc
 
+func! tortoiseTyping#RandomTyping(wordCount,language)
+  call system('node ' . GetPath('random.js') . ' ' . a:wordCount . ' ' . a:language . ' none')
+  exe 'Python startTyping('
+        \ . 'filepath="' . '/tmp/typings.random' . '",'
+        \ . 'randomize=True,'
+        \ . 'wordCount=' . a:wordCount . ')'
+endfunc
+
+func! tortoiseTyping#PunctuationTyping(wordCount,language)
+  call system('node ' . GetPath('random.js') . ' ' . a:wordCount . ' ' . a:language . ' punc')
+  exe 'Python startTyping('
+        \ . 'filepath="' . '/tmp/typings.random' . '",'
+        \ . 'randomize=True,'
+        \ . 'wordCount=' . a:wordCount . ')'
+endfunc
 " Given a filename, returns a full path.  Ex:
+"
 "
 "   xmasCarol.txt ->
 "   /Users/johnsmith/.vim/bundle/Tortoise-Typing/plugin/xmasCarol.txt
@@ -105,7 +126,7 @@ class SourceFactory:
       sentences = [s.strip() for s in sentences]
       sentences = [s for s in sentences if s]
       random.shuffle(sentences)
-      text = ".  ".join(sentences) + "."
+      text = ". ".join(sentences) + "."
 
     # truncate text based on word count
     if wordCount > 0:
