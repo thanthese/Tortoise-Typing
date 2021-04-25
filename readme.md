@@ -34,6 +34,10 @@ eg. `:PunctuationTyping 150 english1000`
 - korean
 - english1000
 - polish
+- punjabi
+- swedish
+- french
+- portuguese
 
 # Advanced Options and Features
 
