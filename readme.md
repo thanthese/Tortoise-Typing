@@ -2,7 +2,7 @@
 
 TortoiseTyping is a minimal typing tutor aimed at touch-typists who would like to spend a few minutes a week sharpening their skills.
 
-This script is called TortoiseTyping because with typing its slow, steady, and accurate wins the race.
+This script is called TortoiseTyping because with typing it's slow, steady, and accurate wins the race.
 
 Compatible with Vim 7.2 and above.  Requires the Vim was compiled with the python switch, which will be true for almost all modern distributions.
 
